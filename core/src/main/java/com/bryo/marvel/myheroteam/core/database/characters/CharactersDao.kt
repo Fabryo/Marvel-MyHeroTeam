@@ -18,6 +18,12 @@ interface CharactersDao {
     @Query("SELECT * FROM character_table WHERE id = :characterId")
     fun getCharacter(characterId: Int): CharacterBase?
 
+    @Query("UPDATE character_table SET hired=:hired WHERE id = :id")
+    fun updateHiredCharacter(id: Int, hired: Boolean)
+
+    @Query("SELECT * FROM character_table where hired = 1")
+    fun getHiredCharacters(): List<CharacterBase>
+
     @Insert(onConflict = REPLACE)
     fun insert(character: CharacterBase)
 

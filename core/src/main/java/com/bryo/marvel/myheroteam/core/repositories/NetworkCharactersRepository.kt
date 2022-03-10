@@ -15,4 +15,14 @@ class NetworkCharactersRepository(private val apiService: MarvelApiService,
             .results
             .map { charactersMapper.map(it) }
     }
+
+    override suspend fun getCharacter(id: Int): MarvelCharacter {
+        return apiService
+            .getMarvelCharacter(id)
+            .data
+            .results
+            .let { charactersMapper.map(it) }
+    }
+
+    override suspend fun getTeamMembers() = emptyList<MarvelCharacter>()
 }

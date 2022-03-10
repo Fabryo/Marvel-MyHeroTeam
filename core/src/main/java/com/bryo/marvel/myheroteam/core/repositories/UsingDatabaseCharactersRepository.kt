@@ -21,6 +21,14 @@ class UsingDatabaseCharactersRepository(private val innerRepository: CharactersR
         }
     }
 
+    override suspend fun getCharacter(id: Int): MarvelCharacter {
+        return databaseRepository.getCharacter(id) ?: innerRepository.getCharacter(id)
+    }
+
+    override suspend fun getTeamMembers(): List<MarvelCharacter> {
+        return databaseRepository.getHiredCharacters()
+    }
+
     private fun now() = Calendar.getInstance().time
 
     private fun Date.isYoungerThan24h(): Boolean {

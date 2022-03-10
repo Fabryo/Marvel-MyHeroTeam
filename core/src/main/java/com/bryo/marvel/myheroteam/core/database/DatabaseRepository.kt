@@ -19,15 +19,19 @@ class DatabaseRepository(
         databaseCharacterToMarvelCharacterMapper.map(it)
     } ?: emptyList()
 
-    fun insertAllCharacters(marvelCharacters: List<MarvelCharacter>) {
-        return charactersDao.insertAllCharacters(marvelCharacters.map {
+    fun insertAllCharacters(marvelCharacters: List<MarvelCharacter>) = charactersDao.insertAllCharacters(marvelCharacters.map {
             marvelCharacterToDatabaseCharacterMapper.map(it)
         })
+
+
+    fun updateHiredCharacter(id: Int, hired: Boolean) = charactersDao.updateHiredCharacter(id, hired)
+
+    fun getHiredCharacters() = charactersDao.getHiredCharacters().map {
+        databaseCharacterToMarvelCharacterMapper.map(it)
     }
 
-    fun insert(marvelCharacter: MarvelCharacter) {
-        return charactersDao.insert(marvelCharacterToDatabaseCharacterMapper.map(marvelCharacter))
-    }
+    fun insert(marvelCharacter: MarvelCharacter) = charactersDao
+        .insert(marvelCharacterToDatabaseCharacterMapper.map(marvelCharacter))
 
     fun deleteAllCharacters() = charactersDao.deleteAllCharacters()
 
