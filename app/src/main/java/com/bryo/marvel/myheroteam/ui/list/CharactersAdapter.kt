@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.bryo.marvel.myheroteam.core.models.MarvelCharacter
 import com.bryo.marvel.myheroteam.databinding.ItemCharacterBinding
+import com.bryo.marvel.myheroteam.extensions.loadImageUrlAsBadge
 import com.bryo.marvel.myheroteam.ui.list.CharactersAdapter.CharacterViewHolder
 
-class CharactersAdapter: Adapter<CharacterViewHolder>() {
+class CharactersAdapter(private val onCharacterClicked: (Int) -> Unit): Adapter<CharacterViewHolder>() {
 
     private var characters: List<MarvelCharacter> = emptyList()
 
@@ -28,8 +29,9 @@ class CharactersAdapter: Adapter<CharacterViewHolder>() {
 
     inner class CharacterViewHolder(private val binding: ItemCharacterBinding): RecyclerView.ViewHolder(binding.root)  {
         fun bind(character: MarvelCharacter) {
-            binding.name.text = character.name
-            binding.description.text = character.description
+            binding.characterName.text = character.name
+            binding.characterImage.loadImageUrlAsBadge(character.imagePath)
+            binding.layout.setOnClickListener { onCharacterClicked(character.id) }
         }
     }
 }

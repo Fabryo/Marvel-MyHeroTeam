@@ -8,17 +8,20 @@
     <fragment
         android:id="@+id/CharacterListFragment"
         android:name="com.bryo.marvel.myheroteam.ui.list.CharacterListFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_character_list">
 
         <action
-            android:id="@+id/action_list_to_detail"
-            app:destination="@id/CharacterDetailFragment" />
+            android:id="@+id/navigate_to_character_detail_action"
+            app:destination="@id/CharacterDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
+
     <fragment
         android:id="@+id/CharacterDetailFragment"
         android:name="com.bryo.marvel.myheroteam.ui.detail.CharacterDetailFragment"
-        android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_character_detail">
 
         <argument
