@@ -4,6 +4,7 @@ App developed for Alma & Bryo partnership purpose.
 Author : Fabrice Rakotonarivo from Bryo
 The application can be used with Android 5+.
 It is developed in full-kotlin (guess it is obvious😅).
+Choice was made not to develop the app for Tablet, but it could easily be developed with the List-Detail Fragments architecture (see below).
 
 ## Setup
 
