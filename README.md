@@ -68,3 +68,7 @@ So on start of the main screen, the app should fetch a data list only if :
 The user can force-refresh the data with a pull-to-refresh from the main application.
 Distant Server test page : https://developer.marvel.com/docs
 
+
+https://user-images.githubusercontent.com/45197000/157774785-aad3fe69-ffb4-4c8f-ad89-fe36fc3e7140.mov
+
+
