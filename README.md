@@ -49,9 +49,15 @@ The application is developed with the libraries :
 - Keys for Store
 
 ## TO DO
-- Multi-language
-- DarkMode
+- UI Tests and ViewModel Tests !
+- More Functional and Unit Tests
+- Implement UI for Tablet
+- Update launcher icon
+- Multi-language with strings-fr
+- DarkMode ? not really necessary as background is always Dark
 - Accessibility
+- Improve Design System with textStyles and dimens
+- Improve UI
 
 ## Notes
 Because of the limited number of calls allowed to the distant Server, I choose to implement a Cache (with Room) of 24h (as advised in the Server documentation). 
