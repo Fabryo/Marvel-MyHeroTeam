@@ -19,6 +19,6 @@ class ApiCharacterToMarvelCharacterMapperTest {
 
     private companion object : KoinComponent {
         val API_HULK = ApiCharacter(1234, "Hulk", "Green beast", Thumbnail("wrongThumbnailPath", "jpg"))
-        val UI_HULK = MarvelCharacter(1234, "Hulk", "Green beast", "wrongThumbnailPath", false)
+        val UI_HULK = MarvelCharacter(1234, "Hulk", "Green beast", "wrongThumbnailPath.jpg", false)
     }
 }
