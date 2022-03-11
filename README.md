@@ -50,6 +50,7 @@ The application is developed with the libraries :
 
 ## TO DO
 - UI Tests missing !!!
+- Update-merge in base instead of erasing in order not to lose the current Squad on refresh from server
 - More ViewModel, Functional and Unit Tests
 - Implement UI for Tablet
 - Update launcher icon
