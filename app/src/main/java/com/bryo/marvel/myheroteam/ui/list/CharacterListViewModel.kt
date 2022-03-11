@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class CharacterListViewModel(private val getTeamMembers: UseCase<Nothing?, List<MarvelCharacter>>,
                              private val getMarvelCharacters: UseCase<Boolean, List<MarvelCharacter>>): ViewModel() {
 
-    private val _loading = MutableLiveData<Boolean>()
+    private val _loading = MutableLiveData(true)
     val loading: LiveData<Boolean>
         get() = _loading
 
