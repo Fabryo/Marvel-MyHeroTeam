@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -71,6 +72,10 @@ class CharacterListFragment : Fragment() {
 
         viewModel.loading.observe(viewLifecycleOwner) {
             binding?.swipeRefresh?.isRefreshing = it
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
         }
     }
 
